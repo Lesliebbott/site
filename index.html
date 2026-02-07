@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Set Game AB | Профессиональные бухгалтерские и технические услуги</title>
+    <style>
+        :root {
+            --primary-blue: #005a87; /* Тон из логотипа D&B */
+            --secondary-gray: #f4f7f9;
+            --accent-gold: #c5a059;
+            --text-dark: #2c3e50;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* HERO SECTION */
+        .hero { 
+            background: linear-gradient(rgba(0, 90, 135, 0.9), rgba(0, 90, 135, 0.7)), 
+                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+
+        /* ABOUT SECTION */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--primary-blue); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .info-card { background: var(--secondary-gray); padding: 30px; border-radius: 8px; border-left: 5px solid var(--primary-blue); }
+
+        /* SERVICES */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-item { padding: 40px; text-align: center; border: 1px solid #eee; transition: transform 0.3s; }
+        .service-item:hover { transform: translateY(-10px); background: var(--secondary-gray); }
+        .service-item h3 { margin-bottom: 15px; color: var(--primary-blue); }
+
+        /* CONTACTS / FOOTER */
+        footer { background: var(--text-dark); color: var(--white); padding: 60px 0; text-align: center; }
+        .contact-info { margin-bottom: 30px; font-size: 1.1rem; }
+        .contact-info p { margin: 10px 0; }
+        .copyright { font-size: 0.9rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Fun Set Game AB</h1>
+            <p>Ваш стратегический партнер в области бухгалтерского учета, аудита и технических консультаций в Швеции.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">О компании</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>Fun Set Game AB</strong> — это профессиональная сервисная компания, базирующаяся в Онсала, Швеция. Мы специализируемся на предоставлении высококачественных услуг в секторе бухгалтерского учета и технических консультаций.</p>
+                    <p style="margin-top: 15px;">Под руководством нашего ключевого принципала, <strong>Пера Хокана Кристоффера Фунсета (Per Håkan Kristoffer Funseth)</strong>, компания демонстрирует стабильный рост и профессиональную надежность.</p>
+                </div>
+                <div class="info-card">
+                    <p><strong>Локация:</strong> Ledets Väg 19, 439 93, Onsala, Halland, Sweden</p>
+                    <p><strong>Годовая выручка:</strong> $55,921</p>
+                    <p><strong>Сектор:</strong> Профессиональные, научные и технические услуги</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Наши компетенции</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Бухгалтерия и налоги</h3>
+                    <p>Полный спектр услуг по ведению бухгалтерского учета, подготовке налоговой отчетности и расчету заработной платы.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Аудит и консалтинг</h3>
+                    <p>Профессиональный финансовый аудит и стратегическое консультирование для вашего бизнеса.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Технические услуги</h3>
+                    <p>Научные и технические консультации, а также специализированные услуги по проектированию.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <h2>Связаться с нами</h2>
+                <p>Адрес: Ledets Väg 19 439 93, Onsala, Halland, Sweden</p>
+                <p>Электронная почта: <a href="mailto:info@costellovideo.pro" style="color: var(--accent-gold);">info@costellovideo.pro</a></p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fun Set Game AB. Все права защищены.</p>
+                <p>Ключевой принципал: Per Håkan Kristoffer Funseth</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
