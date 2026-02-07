@@ -3,114 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Set Game AB | Профессиональные бухгалтерские и технические услуги</title>
+    <title>Costello Video LLC | Premium Rental & Leasing Solutions</title>
     <style>
         :root {
-            --primary-blue: #005a87; /* Тон из логотипа D&B */
-            --secondary-gray: #f4f7f9;
-            --accent-gold: #c5a059;
-            --text-dark: #2c3e50;
+            --primary: #006699;
+            --secondary: #004466;
+            --accent: #f4b400;
+            --bg-light: #f4f7f9;
+            --text-dark: #333333;
             --white: #ffffff;
+            --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
 
-        /* HERO SECTION */
-        .hero { 
-            background: linear-gradient(rgba(0, 90, 135, 0.9), rgba(0, 90, 135, 0.7)), 
-                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000');
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 30px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Section Shared --- */
+        section { padding: 100px 10%; }
+        
+        .block-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .block-header h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .block-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- 1. Hero Screen --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 68, 102, 0.7), rgba(0, 102, 153, 0.7)), 
+                        url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             color: var(--white);
-            padding: 100px 0;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            background: var(--accent);
+            color: var(--secondary);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: #e5a800;
+        }
+
+        /* --- 2. About Us (Our Legacy) --- */
+        .about { background: var(--bg-light); }
+        .about-text {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #444;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* --- 3. Services (Rental Excellence) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-card:hover { transform: translateY(-10px); }
+
+        .service-card h3 { margin-bottom: 15px; color: var(--secondary); }
+
+        /* --- 4. Why Us (Competitive Edge) --- */
+        .why-us { background: var(--secondary); color: var(--white); }
+        .why-us h2 { color: var(--white); }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .why-item h4 { font-size: 1.4rem; color: var(--accent); margin-bottom: 10px; }
+
+        /* --- 5. Process (Service Roadmap) --- */
+        .process-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        .step-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(0, 102, 153, 0.1);
+            margin-bottom: -20px;
+        }
+        .process-step h3 { color: var(--primary); margin-bottom: 10px; }
+
+        /* --- 6. Contact Form --- */
+        .contact-section { background: var(--bg-light); }
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* --- 7. Footer (Global Reach) --- */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 50px 10%;
             text-align: center;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+        .footer-contacts {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .footer-contacts span { display: block; margin-bottom: 10px; }
+        .footer-contacts a { color: var(--accent); text-decoration: none; }
 
-        /* ABOUT SECTION */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--primary-blue); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .info-card { background: var(--secondary-gray); padding: 30px; border-radius: 8px; border-left: 5px solid var(--primary-blue); }
-
-        /* SERVICES */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-item { padding: 40px; text-align: center; border: 1px solid #eee; transition: transform 0.3s; }
-        .service-item:hover { transform: translateY(-10px); background: var(--secondary-gray); }
-        .service-item h3 { margin-bottom: 15px; color: var(--primary-blue); }
-
-        /* CONTACTS / FOOTER */
-        footer { background: var(--text-dark); color: var(--white); padding: 60px 0; text-align: center; }
-        .contact-info { margin-bottom: 30px; font-size: 1.1rem; }
-        .contact-info p { margin: 10px 0; }
-        .copyright { font-size: 0.9rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-
+        /* --- Mobile --- */
         @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#" class="logo">COSTELLO VIDEO LLC</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <header class="hero">
-        <div class="container">
-            <h1>Fun Set Game AB</h1>
-            <p>Ваш стратегический партнер в области бухгалтерского учета, аудита и технических консультаций в Швеции.</p>
-        </div>
+        <h1>Your Premier Partner in Consumer Goods Rental</h1>
+        <p>Expertly facilitating video tape rentals and diverse leasing services across Florida. We bridge the gap between high-quality equipment and the consumers who need them.</p>
+        <a href="#contact" class="cta-btn">Book a Consultation</a>
     </header>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">О компании</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p><strong>Fun Set Game AB</strong> — это профессиональная сервисная компания, базирующаяся в Онсала, Швеция. Мы специализируемся на предоставлении высококачественных услуг в секторе бухгалтерского учета и технических консультаций.</p>
-                    <p style="margin-top: 15px;">Под руководством нашего ключевого принципала, <strong>Пера Хокана Кристоффера Фунсета (Per Håkan Kristoffer Funseth)</strong>, компания демонстрирует стабильный рост и профессиональную надежность.</p>
-                </div>
-                <div class="info-card">
-                    <p><strong>Локация:</strong> Ledets Väg 19, 439 93, Onsala, Halland, Sweden</p>
-                    <p><strong>Годовая выручка:</strong> $55,921</p>
-                    <p><strong>Сектор:</strong> Профессиональные, научные и технические услуги</p>
-                </div>
+    <section id="about" class="about">
+        <div class="block-header">
+            <h2>Our Professional Legacy</h2>
+            <p>Committed to excellence in the rental and leasing sector.</p>
+        </div>
+        <div class="about-text">
+            Costello Video LLC, led by Key Principal Leslie Abbott, has established itself as a reliable pillar in the Florida consumer goods market. 
+            Our expertise spans across specialized video tape rentals and broader leasing services for diverse consumer needs. 
+            Located in the heart of Dunnellon, we pride ourselves on maintaining a standard of service that reflects our deep roots in the community. 
+            Our mission is to provide flexible, high-quality rental solutions that empower our clients to access the tools and entertainment they desire without the burden of ownership. 
+            We continuously adapt our inventory to meet modern demands while honoring the traditional service values that built our company. 
+            At Costello Video LLC, your satisfaction is the metric of our success.
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="block-header">
+            <h2>Rental Excellence</h2>
+            <p>Comprehensive leasing solutions tailored to your lifestyle.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Video Media Rental</h3>
+                <p>We maintain a curated collection of video media for enthusiasts and collectors. Our service focuses on preserving accessibility to classic formats. Experience seamless rental terms designed for media lovers.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consumer Goods Leasing</h3>
+                <p>We provide flexible leasing options for a wide variety of household and consumer durable goods. Avoid high upfront costs with our monthly plans. Every item is inspected for quality and performance before delivery.</p>
+            </div>
+            <div class="service-card">
+                <h3>Real Estate & Asset Support</h3>
+                <p>Through our network, we assist in navigating the complexities of asset rental and leasing related services. We provide the infrastructure needed for efficient asset management. Our team ensures compliance and transparency in every contract.</p>
             </div>
         </div>
     </section>
 
-    <section style="background-color: #f9f9f9;">
-        <div class="container">
-            <h2 class="section-title">Наши компетенции</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Бухгалтерия и налоги</h3>
-                    <p>Полный спектр услуг по ведению бухгалтерского учета, подготовке налоговой отчетности и расчету заработной платы.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Аудит и консалтинг</h3>
-                    <p>Профессиональный финансовый аудит и стратегическое консультирование для вашего бизнеса.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Технические услуги</h3>
-                    <p>Научные и технические консультации, а также специализированные услуги по проектированию.</p>
-                </div>
+    <section class="why-us">
+        <div class="block-header">
+            <h2>The Costello Advantage</h2>
+            <p>Why we remain the preferred choice in Florida.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <h4>Verified Expertise</h4>
+                <p>Managed by industry veteran Leslie Abbott, ensuring professional oversight in every transaction.</p>
             </div>
+            <div class="why-item">
+                <h4>Flexible Terms</h4>
+                <p>Our leasing structures are designed to adapt to your financial needs, offering both short and long-term options.</p>
+            </div>
+            <div class="why-item">
+                <h4>Strategic Location</h4>
+                <p>Conveniently based in Dunnellon, FL, allowing us to serve the local community with rapid response times.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="block-header">
+            <h2>Service Roadmap</h2>
+            <p>How we bring quality rentals to your doorstep.</p>
+        </div>
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <h3>Selection</h3>
+                <p>Browse our extensive inventory of consumer goods and media assets to find the perfect fit.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <h3>Customization</h3>
+                <p>We tailor a leasing or rental agreement that aligns with your specific timeframe and budget.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <h3>Fulfillment</h3>
+                <p>Efficient delivery and setup of your rented assets, backed by our ongoing customer support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="block-header">
+            <h2>Get in Touch</h2>
+            <p>Our experts are ready to assist with your rental inquiries.</p>
+        </div>
+        <div class="form-wrapper">
+            <form action="#">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>How can we help?</label>
+                    <textarea rows="5" placeholder="I am interested in leasing..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="contact-info">
-                <h2>Связаться с нами</h2>
-                <p>Адрес: Ledets Väg 19 439 93, Onsala, Halland, Sweden</p>
-                <p>Электронная почта: <a href="mailto:info@costellovideo.pro" style="color: var(--accent-gold);">info@costellovideo.pro</a></p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 Fun Set Game AB. Все права защищены.</p>
-                <p>Ключевой принципал: Per Håkan Kristoffer Funseth</p>
-            </div>
+        <div class="footer-contacts">
+            <span><strong>Address:</strong> 9786 SW 155TH St, Dunnellon, FL, 34432-7029, USA</span>
+            <span><strong>Email:</strong> <a href="mailto:info@costellovideo.pro">info@costellovideo.pro</a></span>
         </div>
+        <p>&copy; 2026 Costello Video LLC. All Rights Reserved.</p>
     </footer>
 
 </body>
